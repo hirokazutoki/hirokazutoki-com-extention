@@ -10,17 +10,18 @@ export default defineConfig({
     outDir: resolve(__dirname, 'dist'),
       rollupOptions: {
         input: {
-            popup: join(__dirname, 'src/popup/index.html'),
-            },
+          popup: join(__dirname, 'src/popup/index.html'),
+          background: join(__dirname, 'src/background/index.tsx')
+        },
         output: {
-            entryFileNames: 'assets/[name].js'
-          },
+          entryFileNames: 'assets/[name].js'
+        },
       }
   },
   resolve: {
       alias: {
-          '@src': resolve(__dirname, 'src')
-        }
-    },
+        '@src': resolve(__dirname, 'src')
+      }
+  },
   plugins: [react()],
 })
