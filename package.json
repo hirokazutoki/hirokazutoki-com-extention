@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:watch": "vite build --watch",
+    "build:watch": "concurrently \"yarn build:watch-content\" \"yarn build:watch-others\"",
+    "build:watch-content": "vite build --watch --config vite.config.content.ts",
+    "build:watch-others": "vite build --watch",
     "lint": "eslint .",
     "preview": "vite preview"
   },
