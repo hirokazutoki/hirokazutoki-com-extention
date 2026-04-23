@@ -1,14 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "My Chrome Extension",
+  "name": "hirokazutoki.com extension",
   "version": "1.0.0",
   "background": {
     "service_worker": "/assets/background.js"
   },
   "content_scripts": [
     {
-      "js": ["assets/content.js"],
-      "matches": ["https://www.google.com/*"]
+      "js": ["/assets/content.js"],
+      "matches": [
+        "https://hirokazutoki.com/",
+        "https://www.hirokazutoki.com/"
+      ]
     }
   ],
   "action": {
