@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Banner } from './Banner'
 
 // 1. consoleにテキストを出力
 console.log('Hello Content')
@@ -22,52 +23,7 @@ document.body.prepend(root)
 const renderBanner = () => {
   createRoot(root).render(
     <StrictMode>
-      <>
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: `${BANNER_HEIGHT}px`,
-            backgroundColor: 'whitesmoke',
-            color: '#333',
-            textAlign: 'center',
-            lineHeight: `${BANNER_HEIGHT}px`,
-            fontWeight: 'bold',
-            zIndex: 9999,
-            animation: 'slideDown 0.5s ease-out forwards',
-          }}
-        >Hi, there! 👋</div>
-
-        <div
-          style={{
-            width: '100%',
-            height: 0,
-            animation: 'pushDown 0.5s ease-out forwards',
-          }}
-        />
-
-        <style>{`
-          @keyframes slideDown {
-            0% {
-              transform: translateY(-100%);
-            }
-            100% {
-              transform: translateY(0);
-            }
-          }
-
-          @keyframes pushDown {
-            0% {
-              height: 0;
-            }
-            100% {
-              height: ${BANNER_HEIGHT}px;
-            }
-          }
-        `}</style>
-      </>
+      <Banner height={BANNER_HEIGHT} />
     </StrictMode>
   )
 }
