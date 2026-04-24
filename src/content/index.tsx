@@ -7,6 +7,7 @@ console.log('Hello Content')
 
 const BANNER_HEIGHT = 60
 const BANNER_DELAY_MS = 400
+const BANNER_ANIMATION_MS = 500
 
 const removeFixedClassFromHeader = () => {
   const header = document.querySelector('header')
@@ -23,7 +24,7 @@ document.body.prepend(root)
 const renderBanner = () => {
   createRoot(root).render(
     <StrictMode>
-      <Banner height={BANNER_HEIGHT} />
+      <Banner height={BANNER_HEIGHT} animationMs={BANNER_ANIMATION_MS}/>
     </StrictMode>
   )
 }
