@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client'
 console.log('Hello Content')
 
 const BANNER_HEIGHT = 60
-const BANNER_DELAY_MS = 300
+const BANNER_DELAY_MS = 400
 
 const removeFixedClassFromHeader = () => {
   const header = document.querySelector('header')
